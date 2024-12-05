@@ -1,0 +1,302 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.css">
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.13.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.13.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.13.1/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/>
+<!--CHART.JS-->
+<script src="chartjs/chart.js"></script>
+<script src="chartjs/chartjs-plugin-datalabels@2.0.0"></script>
+<script src="chartjs/patternomaly.min.js"></script>
+<script>
+    // Register the plugin to all charts:
+    Chart.register(ChartDataLabels);
+</script>
+<!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Serenity BDD Report</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="83f9ed15dc9032cb55a022fc1131f5bc73c5174ef7dc58e65d361a1f6ec242d4.html">Automatizar Tiendas Jumbo</a></span>
+                > <span class="truncate-60"><a
+                    href="a7e49c8347eceb1c6f061168b6b71d3de4383f955e81ccde50b604129aa6eb18.html">Agregar Producto Al Carrito </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="bi bi-journal-check"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 04-12-2024 20:48</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fs-2 bi bi-chat-left-quote large-icon"></i>
+                                    <span class="story-header-title">Automatizar Tiendas Jumbo </span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="d2c7b864ff1c740c4e5a488223b3b728da26d4492d7c7e10add3d7a85178917e.html">Agregar Carrito
+                                </a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="6fe0671aeea9e76b6998ee682216d11c7748a4152740df0586f3c256ecb3f5da.html">Chrome
+                                </a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="f55cf301e8f51d63aebeb8bc8dbe880df940586e2a502c7a3e24c2b639523f8f.html">Windows
+                                </a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="59736924e81ea98f655ac8eba7cd96079d8d80131e0c4360daf32a724d0b38a0.html">Chrome, Windows
+                                </a>
+                                </span>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Agregar Producto Al Carrito
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+    <div class="story-title">
+        <h3>Scenario:</h3>
+        <div class="scenario">Dado Que me encuentro en la pagina '&lt;url&gt;'<br>Cuando busco el producto '&lt;producto&gt;''&lt;marca&gt;'<br>Y diligencio los datos de entrega '&lt;correo&gt;''&lt;departamento&gt;''&lt;ciudad&gt;''&lt;direccion&gt;''&lt;complementoDireccion&gt;'<br>Entonces Visualizare '&lt;producto&gt;' en el carrito</div>
+    </div>
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="e14ae25a735e99894d1a5d9bc79368cfb48ed9b4dd1a9c4bdba79ac30903c735.png" title=" 1: Agregar Producto Al Carrito ({url=https://www.tiendasjumbo.co/, producto=Silla Ejecutiva, marca=MUEBLES 2020, correo=manuel_automatiza@yopmail.com, departamento=BOGOT&Aacute;, D.C., ciudad=Bogot&aacute;, D.C., direccion=DG 40 A 8-38, complementoDireccion=101})" width="1366"/>
+                <img src="e14ae25a735e99894d1a5d9bc79368cfb48ed9b4dd1a9c4bdba79ac30903c735.png" title=" Dado Que me encuentro en la pagina 'https://www.tiendasjumbo.co/'" width="1366"/>
+                <img src="e14ae25a735e99894d1a5d9bc79368cfb48ed9b4dd1a9c4bdba79ac30903c735.png" title=" analista opens the browser at https://www.tiendasjumbo.co/" width="1366"/>
+                <img src="e14ae25a735e99894d1a5d9bc79368cfb48ed9b4dd1a9c4bdba79ac30903c735.png" title=" Dado Que me encuentro en la pagina 'https://www.tiendasjumbo.co/' (completed)" width="1366"/>
+                <img src="e14ae25a735e99894d1a5d9bc79368cfb48ed9b4dd1a9c4bdba79ac30903c735.png" title=" Cuando busco el producto 'Silla Ejecutiva''MUEBLES 2020'" width="1366"/>
+                <img src="e14ae25a735e99894d1a5d9bc79368cfb48ed9b4dd1a9c4bdba79ac30903c735.png" title=" analista clicks on Campo busqueda producto" width="1366"/>
+                <img src="1f7ff7c45857ffd9d9e228bebcc098316f3627daf3e166e62fac075f55b745be.png" title=" analista clicks on Campo busqueda producto (completed)" width="1366"/>
+                <img src="1f7ff7c45857ffd9d9e228bebcc098316f3627daf3e166e62fac075f55b745be.png" title=" analista enters 'Silla Ejecutiva' into Campo busqueda producto" width="1366"/>
+                <img src="63a7616ff80d5487c0da4d0b7c7a603b4fea553a4e229485284444e0aa894113.png" title=" analista enters 'Silla Ejecutiva' into Campo busqueda producto" width="1366"/>
+                <img src="8b8d17263298d239063646604da961bd598067a136c3892462396430a9c1cc03.png" title=" analista enters 'Silla Ejecutiva' into Campo busqueda producto (completed)" width="1366"/>
+                <img src="8b8d17263298d239063646604da961bd598067a136c3892462396430a9c1cc03.png" title=" analista clicks on Boton busqueda producto" width="1366"/>
+                <img src="c19710713a42ff982abca08db27229a572a6480ca714f227f6bb188ff02b6dbe.png" title=" analista clicks on Boton busqueda producto" width="1366"/>
+                <img src="ebcb9bc3bdbb47d1d9d412530e08b1d4ec1e792de3e3e97154c0b712b18d3957.png" title=" analista clicks on Boton busqueda producto (completed)" width="1366"/>
+                <img src="ebcb9bc3bdbb47d1d9d412530e08b1d4ec1e792de3e3e97154c0b712b18d3957.png" title=" analista clicks on Boton para cerrar un popup" width="1366"/>
+                <img src="6db5e6a5e05293a1b6ecc0d741da8d4eebeb15864985d828549c25a594f2e8ae.png" title=" analista clicks on Boton para cerrar un popup" width="1366"/>
+                <img src="72b9ea3d2e60521da1406c6990875b624895975b5ad17fc56268823f95cb26f4.png" title=" analista clicks on Boton para cerrar un popup (completed)" width="1366"/>
+                <img src="72b9ea3d2e60521da1406c6990875b624895975b5ad17fc56268823f95cb26f4.png" title=" analista clicks on Opcion expandir marcas" width="1366"/>
+                <img src="b8cd1a45d88255c8128db7c1ae992e64e8f64d629b926b85c4625e330dfc8af9.png" title=" analista clicks on Opcion expandir marcas" width="1366"/>
+                <img src="5e0d9fa0d1db00712f1532f32bf1890cbe3651670eec0e739362f43cb4893da6.png" title=" analista clicks on Opcion expandir marcas (completed)" width="1366"/>
+                <img src="5e0d9fa0d1db00712f1532f32bf1890cbe3651670eec0e739362f43cb4893da6.png" title=" analista clicks on Checkbox para seleccionar marca" width="1366"/>
+                <img src="59d1835ab3e0d42ffcbbaa8bd0449161a0b28512efe3c69f2eb06f29d4743116.png" title=" analista clicks on Checkbox para seleccionar marca" width="1366"/>
+                <img src="05e9df0af7a5aef73398c79a3a8aa8457ac58458ae492bbfa9deae4b335d851a.png" title=" analista clicks on Checkbox para seleccionar marca (completed)" width="1366"/>
+                <img src="05e9df0af7a5aef73398c79a3a8aa8457ac58458ae492bbfa9deae4b335d851a.png" title=" Cuando busco el producto 'Silla Ejecutiva''MUEBLES 2020' (completed)" width="1366"/>
+                <img src="05e9df0af7a5aef73398c79a3a8aa8457ac58458ae492bbfa9deae4b335d851a.png" title=" Y diligencio los datos de entrega 'manuel_automatiza@yopmail.com''BOGOT&Aacute;, D.C.''Bogot&aacute;, D.C.''DG 40 A 8-38''101'" width="1366"/>
+                <img src="05e9df0af7a5aef73398c79a3a8aa8457ac58458ae492bbfa9deae4b335d851a.png" title=" analista clicks on Boton para cerrar un popup" width="1366"/>
+                <img src="6fff02539f3de920d769e5e754f6f2b49ad3a4ca371aacebdf4b3d812038882d.png" title=" analista clicks on Boton para cerrar un popup (completed)" width="1366"/>
+                <img src="6fff02539f3de920d769e5e754f6f2b49ad3a4ca371aacebdf4b3d812038882d.png" title=" analista clicks on Boton para agregar producto" width="1366"/>
+                <img src="5e3164a6fc12977559911ee3fc81d230fcda5552fe2d66d300b223b9b5379c32.png" title=" analista clicks on Boton para agregar producto" width="1366"/>
+                <img src="945337a92d48f786a895b971e47b5552fb22e1960e599d7eb43a8f885614573c.png" title=" analista clicks on Boton para agregar producto (completed)" width="1366"/>
+                <img src="945337a92d48f786a895b971e47b5552fb22e1960e599d7eb43a8f885614573c.png" title=" analista enters 'manuel_automatiza@yopmail.com' into Campo para ingresar el correo" width="1366"/>
+                <img src="b7d1480da75aee5d5519498a96cc64b41e6e7ac42182472e0d208c9d45e1a9a8.png" title=" analista enters 'manuel_automatiza@yopmail.com' into Campo para ingresar el correo (completed)" width="1366"/>
+                <img src="b7d1480da75aee5d5519498a96cc64b41e6e7ac42182472e0d208c9d45e1a9a8.png" title=" analista clicks on Boton para enviar correo ingresado" width="1366"/>
+                <img src="255e3e315a998ea8a2e3b8697e1f23e981fb08fafa2c078c30deca5754addd29.png" title=" analista clicks on Boton para enviar correo ingresado" width="1366"/>
+                <img src="4ce3797b553b13d8d8e6e27d415bbf0b7770f12a45bf17ae99f5bd050870d687.png" title=" analista clicks on Boton para enviar correo ingresado (completed)" width="1366"/>
+                <img src="4ce3797b553b13d8d8e6e27d415bbf0b7770f12a45bf17ae99f5bd050870d687.png" title=" analista clicks on Seleccionar departamento" width="1366"/>
+                <img src="ae83c3ae3d3d74f3d7d807bce3b95fd4973c2d598cb85251fe418ded599dc7d5.png" title=" analista clicks on Seleccionar departamento (completed)" width="1366"/>
+                <img src="de308372898202be1511f51ad179ef506122650c9e09ebce457703cb7fbd6d6b.png" title=" Analista presionar enter" width="1366"/>
+                <img src="6c3960cb91b1c80ee721e3b736783ab078d3ab0270a2cc5087029fa70e283a03.png" title=" Analista presionar enter (completed)" width="1366"/>
+                <img src="6c3960cb91b1c80ee721e3b736783ab078d3ab0270a2cc5087029fa70e283a03.png" title=" analista clicks on Seleccionar ciudad" width="1366"/>
+                <img src="451603187469cadb977756aa94b5c1f659c807c1d8decc2f1061edf8cc138b7b.png" title=" analista clicks on Seleccionar ciudad (completed)" width="1366"/>
+                <img src="9af267c60df494f33b4e546ccaaa2260a9cb5138b1b80e8773131da90a76c6f6.png" title=" Analista presionar enter" width="1366"/>
+                <img src="a9247419ac1463cdf099587bb9013f39d5d926519260e10e02c82e4289f78599.png" title=" Analista presionar enter (completed)" width="1366"/>
+                <img src="a9247419ac1463cdf099587bb9013f39d5d926519260e10e02c82e4289f78599.png" title=" analista enters 'DG 40 A 8-38' into Campo para ingresar direccion" width="1366"/>
+                <img src="ef506a4c842a4ef13e663233879f06838a719bca9ac6c302c3591bbbb6b91f05.png" title=" analista enters 'DG 40 A 8-38' into Campo para ingresar direccion (completed)" width="1366"/>
+                <img src="ef506a4c842a4ef13e663233879f06838a719bca9ac6c302c3591bbbb6b91f05.png" title=" analista enters '101' into Campo para ingresar complemento de la direccion" width="1366"/>
+                <img src="4628364f4232514bf07ec4182172dffb9babedc6f76123894e6d7b132a5d9a5a.png" title=" analista enters '101' into Campo para ingresar complemento de la direccion (completed)" width="1366"/>
+                <img src="4628364f4232514bf07ec4182172dffb9babedc6f76123894e6d7b132a5d9a5a.png" title=" analista clicks on Boton para confirmar datos ingresados" width="1366"/>
+                <img src="7b2b3857aa088811024ff6cb50623d84a3fd1213722ab75cae9ea928d1e8bbbd.png" title=" analista clicks on Boton para confirmar datos ingresados" width="1366"/>
+                <img src="7f1ef7e1ad5f98fefbea575833533006be30d7be414783be6351ca6556dcfbfd.png" title=" analista clicks on Boton para confirmar datos ingresados (completed)" width="1366"/>
+                <img src="7fde61d9aff61540fbaf38f97e4b487e998108fed7747a1c25291201024f0f2d.png" title=" Y diligencio los datos de entrega 'manuel_automatiza@yopmail.com''BOGOT&Aacute;, D.C.''Bogot&aacute;, D.C.''DG 40 A 8-38''101' (completed)" width="1366"/>
+                <img src="7fde61d9aff61540fbaf38f97e4b487e998108fed7747a1c25291201024f0f2d.png" title=" Entonces Visualizare 'Silla Ejecutiva' en el carrito" width="1366"/>
+                <img src="7fde61d9aff61540fbaf38f97e4b487e998108fed7747a1c25291201024f0f2d.png" title=" 1: Agregar Producto Al Carrito ({url=https://www.tiendasjumbo.co/, producto=Silla Ejecutiva, marca=MUEBLES 2020, correo=manuel_automatiza@yopmail.com, departamento=BOGOT&Aacute;, D.C., ciudad=Bogot&aacute;, D.C., direccion=DG 40 A 8-38, complementoDireccion=101}) (completed): <span class='success-color'>SUCCESS</span>" width="1366"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 3.7.1</span>
+</div>
+</body>
+</html>
